@@ -51,6 +51,14 @@ Cypress.Commands.add('api_loginDeleteAll', () => {
         }
     });
 });
+Cypress.Commands.add('api_loginCreateNewUser', (user, options) => {
+    return cy.request({
+        method: 'POST',
+        url: '/login/',
+        body: user,
+        ...options
+    });
+});
 
 //API Commands da API de Students
 
